@@ -5,7 +5,7 @@ FleetMetrics is a enterprise-grade PostgreSQL database system designed for manag
 
 ## 🛠️ Key Technical Features
 - **Table Partitioning:** Implemented range partitioning on trip dates for optimized time-series querying.
-- **JSONB Telemetry Parsing:** Handled unstructured IoT sensor data (speed, engine temp) using GIN/Expression indexing.
+- **JSONB Telemetry Parsing:** Applied **B-Tree Expression Indexing** on extracted JSONB fields (speed, engine temp) for high-speed anomaly filtering and query optimization.
 - **Automated Audit System:** Built custom PL/pgSQL triggers to log trip fare modifications into `fare_audit_logs`.
 - **Advanced Analytics:** Used Window Functions (`DENSE_RANK()`, `LAG()`) and CTEs to detect driver fatigue and rank top performers.
 - **Performance Optimization:** Evaluated query execution plans with `EXPLAIN ANALYZE` to replace sequential scans with Index Scans.
